@@ -1,3 +1,5 @@
+[![NuGet](https://img.shields.io/nuget/v/DiscordWebhooks?color=brightgreen)](https://www.nuget.org/packages/DiscordWebhooks)
+
 # Discord-Webhook-Library
 Easy to use Simple Discord Webhooks in C#
 
