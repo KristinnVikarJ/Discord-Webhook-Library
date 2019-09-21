@@ -1,4 +1,4 @@
-# Simple-Discord-Webhook-Library
+# Discord-Webhook-Library
 Easy to use Simple Discord Webhooks in C#
 
 # Usage
