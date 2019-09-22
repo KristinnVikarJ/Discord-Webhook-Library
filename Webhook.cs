@@ -6,27 +6,26 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Discord_Webhook
+namespace DiscordWebhook
 {
     public class Webhook
     {
-        private string _URL;
+        private Uri _Uri;
         public Webhook(string URL)
         {
-            _URL = URL;
+            if(!Uri.TryCreate(URL, UriKind.Absolute, out _Uri))
+            {
+                throw new UriFormatException();
+            }
         }
 
         public string PostData(WebhookObject data)
         {
-            if (Uri.TryCreate(_URL, UriKind.Absolute, out Uri uri))
+            using (WebClient wb = new WebClient())
             {
-                using (WebClient wb = new WebClient())
-                {
-                    wb.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-                    return wb.UploadString(uri, "POST", JsonConvert.SerializeObject(data));
-                }
+                wb.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                return wb.UploadString(_Uri, "POST", JsonConvert.SerializeObject(data));
             }
-            return "Failed to Post Data";
         }
     }
 
