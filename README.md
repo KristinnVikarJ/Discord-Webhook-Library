@@ -4,12 +4,12 @@
 Easy to use Simple Discord Webhooks in C#
 
 # Usage
-Create a Webhook
+#### Create a Webhook
 ```C#
 Webhook webhook = new Webhook(WebhookURL);
 ```
 
-Create the Webhook Data Object
+#### Create the Webhook Data Object
 ```C#
 WebhookObject obj = new WebhookObject()
 {
@@ -18,7 +18,7 @@ WebhookObject obj = new WebhookObject()
 } 
 ```
 
-Then Post the Object
+#### Post the Webhook Data Object
 ```C#
 webhook.PostData(obj);
 ```
@@ -38,7 +38,7 @@ Embed embed = new Embed()
 }
 ```
 
-Here's An embed being used to post an image of a cat
+#### Here's An embed being used to post an image of a cat
 ```C#
 Webhook webhook = new Webhook("");
 
