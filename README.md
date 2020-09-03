@@ -40,7 +40,7 @@ Embed embed = new Embed()
 
 #### Here's An embed being used to post an image of a cat
 ```C#
-Webhook webhook = new Webhook("");
+Webhook webhook = new Webhook(WebhookURL);
 
 WebhookObject obj = new WebhookObject()
 {
